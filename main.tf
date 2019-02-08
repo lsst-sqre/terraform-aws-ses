@@ -5,13 +5,13 @@ provider "aws" {
 
 module "ses_domain" {
   source            = "trussworks/ses-domain/aws"
-  domain_name       = "lsst.codes"
-  mail_from_domain  = "email.lsst.codes"
+  domain_name       = "${var.domain_name}"
+  mail_from_domain  = "email.${var.domain_name}"
   route53_zone_id   = "${var.aws_zone_id}"
-  from_addresses    = ["test@lsst.codes"]
-  dmarc_rua         = "jhoblitt@lsst.org"
+  from_addresses    = ["test@ts.lsst.codes"]
+  dmarc_rua         = "${var.dmarc_rua}"
   receive_s3_bucket = "${aws_s3_bucket.mail.id}"
-  receive_s3_prefix = "/inbound"
+  receive_s3_prefix = "inbound"
   ses_rule_set      = "the_rules"
 }
 

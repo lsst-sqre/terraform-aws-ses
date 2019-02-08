@@ -26,6 +26,8 @@ terragrunt = {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | aws\_zone\_id | route53 Hosted Zone ID to manage DNS records in. | string | n/a | yes |
+| dmarc\_rua | dmarc rua email address. | string | n/a | yes |
+| domain\_name | @domain. | string | n/a | yes |
 | s3\_bucket | bucket to hold inbound email. | string | n/a | yes |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
