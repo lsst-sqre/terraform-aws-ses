@@ -3,7 +3,7 @@
 set -e
 shopt -s globstar nullglob
 
-CHECK=( **/*.yaml **/*.yaml.tpl **/*.yml **/*.eyaml .travis.yml .pre-commit-config.yaml )
+CHECK=( **/*.{yaml,yml,.eyaml} .*.{yml,yaml} )
 EYAML=( **/*.eyaml )
 IGNORE=()
 CONF_FILE=".yamllint.yaml"
