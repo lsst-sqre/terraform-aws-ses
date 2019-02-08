@@ -1,3 +1,12 @@
+variable aws_region {
+  description = "aws region."
+  default     = "us-west-2"
+}
+
+variable aws_profile {
+  description = "aws access profile. Eg., ~/.aws/credentials"
+}
+
 variable "aws_zone_id" {
   description = "route53 Hosted Zone ID to manage DNS records in."
 }

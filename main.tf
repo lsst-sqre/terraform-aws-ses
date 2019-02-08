@@ -1,6 +1,7 @@
 provider "aws" {
   version = "~> 1.21"
-  region  = "us-east-1"
+  region  = "${var.aws_region}"
+  profile = "${var.aws_profile}"
 }
 
 module "ses_domain" {
