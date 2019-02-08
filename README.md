@@ -1,21 +1,21 @@
-terraform aws ses test deployment
+terraform aws ses deployment w/ dashboard
 ===
 
-[![Build Status](https://travis-ci.org/lsst-sqre/terraform-ses-test.png)](https://travis-ci.org/lsst-sqre/terraform-ses-test)
+[![Build Status](https://travis-ci.org/lsst-sqre/terraform-aws-ses.png)](https://travis-ci.org/lsst-sqre/terraform-aws-ses)
 
 Usage
 ---
 
 This package is intended to be used as a "top level" deployment, rather than as
-a general purpose module, and thus declares provider configuration that that
-may be inappropriate in a module.
+a general purpose module, and thus declares provider configuration that may be
+inappropriate in a module.
 
 `terragrunt` configuration example:
 
 ```terraform
 terragrunt = {
   terraform {
-    source = "git::git@github.com:lsst-sqre/terraform-ses-test.git//?ref=master"
+    source = "git::git@github.com:lsst-sqre/terraform-aws-ses.git//?ref=master"
   }
 }
 ```
