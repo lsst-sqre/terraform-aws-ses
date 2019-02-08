@@ -26,6 +26,7 @@ terragrunt = {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | aws\_zone\_id | route53 Hosted Zone ID to manage DNS records in. | string | n/a | yes |
+| bounce\_addresses | list of email addresses to send bounce reports to. | list | n/a | yes |
 | dmarc\_rua | dmarc rua email address. | string | n/a | yes |
 | domain\_name | @domain. | string | n/a | yes |
 | s3\_bucket | bucket to hold inbound email. | string | n/a | yes |

@@ -13,3 +13,8 @@ variable "domain_name" {
 variable "s3_bucket" {
   description = "bucket to hold inbound email."
 }
+
+variable "bounce_addresses" {
+  description = "list of email addresses to send bounce reports to."
+  type        = "list"
+}
