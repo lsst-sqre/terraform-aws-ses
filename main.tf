@@ -19,6 +19,12 @@ resource "aws_ses_receipt_rule_set" "the_rules" {
   rule_set_name = "the_rules"
 }
 
+resource "aws_ses_active_receipt_rule_set" "main" {
+  rule_set_name = "the_rules"
+
+  depends_on = ["aws_ses_receipt_rule_set.the_rules"]
+}
+
 # https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html
 resource "aws_s3_bucket" "mail" {
   bucket = "${var.s3_bucket}"
