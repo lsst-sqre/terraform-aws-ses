@@ -9,7 +9,7 @@ module "ses_domain" {
   domain_name       = "${var.domain_name}"
   mail_from_domain  = "email.${var.domain_name}"
   route53_zone_id   = "${var.aws_zone_id}"
-  from_addresses    = ["test@ts.lsst.codes"]
+  from_addresses    = ["${var.from_addresses}"]
   dmarc_rua         = "${var.dmarc_rua}"
   receive_s3_bucket = "${aws_s3_bucket.mail.id}"
   receive_s3_prefix = "inbound"

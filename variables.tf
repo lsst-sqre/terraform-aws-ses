@@ -27,3 +27,9 @@ variable "bounce_addresses" {
   description = "list of email addresses to send bounce reports to."
   type        = "list"
 }
+
+variable "from_addresses" {
+  description = "list of email addresses to receive for while in sandbox mode."
+  type        = "list"
+  default     = []
+}
