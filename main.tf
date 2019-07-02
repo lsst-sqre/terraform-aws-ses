@@ -11,13 +11,15 @@ provider "template" {
 }
 
 provider "aws" {
-  version = "~> 1.21"
+  version = "~> 2.17.0"
   region  = "${var.aws_region}"
   profile = "${var.aws_profile}"
 }
 
 module "ses_domain" {
-  source            = "trussworks/ses-domain/aws"
+  source  = "trussworks/ses-domain/aws"
+  version = "1.0.1"
+
   domain_name       = "${var.domain_name}"
   mail_from_domain  = "email.${var.domain_name}"
   route53_zone_id   = "${var.aws_zone_id}"
@@ -74,7 +76,9 @@ resource "aws_s3_bucket_metric" "mail" {
 data "aws_caller_identity" "current" {}
 
 module "ses_dashboard" {
-  source                     = "connect-group/ses-dashboard/aws"
+  source  = "connect-group/ses-dashboard/aws"
+  version = "1.0.5"
+
   to_addresses               = ["${var.bounce_addresses}"]
   email_from_display_name    = "Bounced Emails Dashboard"
   email_introduction_message = "Bounced emails, or complaint emails, have been received for this account."

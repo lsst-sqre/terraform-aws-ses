@@ -2,7 +2,7 @@
 
 set -e
 
-TF_VER="0.11.11"
+TF_VER="0.11.14"
 
 tf() {
   docker run -ti -v "$(pwd):$(pwd)" -w "$(pwd)" \
