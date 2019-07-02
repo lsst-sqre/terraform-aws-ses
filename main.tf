@@ -74,30 +74,3 @@ resource "aws_s3_bucket_metric" "mail" {
 }
 
 data "aws_caller_identity" "current" {}
-
-module "ses_dashboard" {
-  source  = "connect-group/ses-dashboard/aws"
-  version = "1.0.5"
-
-  to_addresses               = ["${var.bounce_addresses}"]
-  email_from_display_name    = "Bounced Emails Dashboard"
-  email_introduction_message = "Bounced emails, or complaint emails, have been received for this account."
-}
-
-resource "aws_ses_identity_notification_topic" "bounce" {
-  topic_arn         = "${module.ses_dashboard.topic_arn}"
-  notification_type = "Bounce"
-  identity          = "${var.domain_name}"
-}
-
-resource "aws_ses_identity_notification_topic" "complaint" {
-  topic_arn         = "${module.ses_dashboard.topic_arn}"
-  notification_type = "Complaint"
-  identity          = "${var.domain_name}"
-}
-
-resource "aws_ses_identity_notification_topic" "delivery" {
-  topic_arn         = "${module.ses_dashboard.topic_arn}"
-  notification_type = "Delivery"
-  identity          = "${var.domain_name}"
-}
