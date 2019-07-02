@@ -74,7 +74,9 @@ resource "aws_s3_bucket_metric" "mail" {
 data "aws_caller_identity" "current" {}
 
 module "ses_dashboard" {
-  source                     = "connect-group/ses-dashboard/aws"
+  source  = "connect-group/ses-dashboard/aws"
+  version = "1.0.5"
+
   to_addresses               = ["${var.bounce_addresses}"]
   email_from_display_name    = "Bounced Emails Dashboard"
   email_introduction_message = "Bounced emails, or complaint emails, have been received for this account."
