@@ -28,7 +28,6 @@ terragrunt = {
 | aws\_profile | aws access profile. Eg., ~/.aws/credentials | string | n/a | yes |
 | aws\_region | aws region. | string | `"us-west-2"` | no |
 | aws\_zone\_id | route53 Hosted Zone ID to manage DNS records in. | string | n/a | yes |
-| bounce\_addresses | list of email addresses to send bounce reports to. | list | n/a | yes |
 | dmarc\_rua | dmarc rua email address. | string | n/a | yes |
 | domain\_name | @domain. | string | n/a | yes |
 | from\_addresses | list of email addresses to receive for while in sandbox mode. | list | `[]` | no |
