@@ -17,7 +17,9 @@ provider "aws" {
 }
 
 module "ses_domain" {
-  source            = "trussworks/ses-domain/aws"
+  source  = "trussworks/ses-domain/aws"
+  version = "1.0.1"
+
   domain_name       = "${var.domain_name}"
   mail_from_domain  = "email.${var.domain_name}"
   route53_zone_id   = "${var.aws_zone_id}"
